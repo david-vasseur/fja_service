@@ -20,8 +20,10 @@ services:
       - "host.docker.internal:host-gateway"
     networks:
       - fja_internal
+      - postgres-network
 
 networks:
   fja_internal:
-    name: fja_internal
-    driver: bridge
+    external: true
+  postgres-network:
+    external: true
