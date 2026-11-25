@@ -19,11 +19,11 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     networks:
-      - fja_internal
+      - fja-network
       - postgres-network
 
 networks:
-  fja_internal:
+  fja-network:
     external: true
   postgres-network:
     external: true
