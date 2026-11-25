@@ -2,7 +2,7 @@ services:
   fja-backend:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.prod
     container_name: fja-backend
     restart: unless-stopped
     env_file:
