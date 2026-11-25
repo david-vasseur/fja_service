@@ -1,0 +1,148 @@
+import * as runtime from "@prisma/client/runtime/index-browser";
+export type * from '../models.js';
+export type * from './prismaNamespace.js';
+export declare const Decimal: typeof runtime.Decimal;
+export declare const NullTypes: {
+    DbNull: (new (secret: never) => typeof runtime.DbNull);
+    JsonNull: (new (secret: never) => typeof runtime.JsonNull);
+    AnyNull: (new (secret: never) => typeof runtime.AnyNull);
+};
+export declare const DbNull: import("@prisma/client-runtime-utils").DbNullClass;
+export declare const JsonNull: import("@prisma/client-runtime-utils").JsonNullClass;
+export declare const AnyNull: import("@prisma/client-runtime-utils").AnyNullClass;
+export declare const ModelName: {
+    readonly Admin: "Admin";
+    readonly SessionFingerprint: "SessionFingerprint";
+    readonly PushSubscription: "PushSubscription";
+    readonly Vendeur: "Vendeur";
+    readonly Operation: "Operation";
+    readonly AffectationVendeur: "AffectationVendeur";
+    readonly Vente: "Vente";
+};
+export type ModelName = (typeof ModelName)[keyof typeof ModelName];
+export declare const TransactionIsolationLevel: {
+    readonly ReadUncommitted: "ReadUncommitted";
+    readonly ReadCommitted: "ReadCommitted";
+    readonly RepeatableRead: "RepeatableRead";
+    readonly Serializable: "Serializable";
+};
+export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel];
+export declare const AdminScalarFieldEnum: {
+    readonly id: "id";
+    readonly email: "email";
+    readonly passwordHash: "passwordHash";
+    readonly nom: "nom";
+    readonly telephone: "telephone";
+    readonly createdAt: "createdAt";
+    readonly updatedAt: "updatedAt";
+};
+export type AdminScalarFieldEnum = (typeof AdminScalarFieldEnum)[keyof typeof AdminScalarFieldEnum];
+export declare const SessionFingerprintScalarFieldEnum: {
+    readonly id: "id";
+    readonly tokenHash: "tokenHash";
+    readonly fingerprintHash: "fingerprintHash";
+    readonly role: "role";
+    readonly adminId: "adminId";
+    readonly operationSlug: "operationSlug";
+    readonly ipAddress: "ipAddress";
+    readonly userAgent: "userAgent";
+    readonly lastActivityAt: "lastActivityAt";
+    readonly expiresAt: "expiresAt";
+    readonly createdAt: "createdAt";
+};
+export type SessionFingerprintScalarFieldEnum = (typeof SessionFingerprintScalarFieldEnum)[keyof typeof SessionFingerprintScalarFieldEnum];
+export declare const PushSubscriptionScalarFieldEnum: {
+    readonly id: "id";
+    readonly endpoint: "endpoint";
+    readonly p256dh: "p256dh";
+    readonly auth: "auth";
+    readonly userAgent: "userAgent";
+    readonly createdAt: "createdAt";
+};
+export type PushSubscriptionScalarFieldEnum = (typeof PushSubscriptionScalarFieldEnum)[keyof typeof PushSubscriptionScalarFieldEnum];
+export declare const VendeurScalarFieldEnum: {
+    readonly id: "id";
+    readonly prenom: "prenom";
+    readonly nom: "nom";
+    readonly email: "email";
+    readonly telephone: "telephone";
+    readonly adresse: "adresse";
+    readonly codePostal: "codePostal";
+    readonly ville: "ville";
+    readonly dateNaissance: "dateNaissance";
+    readonly lieuNaissance: "lieuNaissance";
+    readonly nationalite: "nationalite";
+    readonly nirEncrypted: "nirEncrypted";
+    readonly nirLast4: "nirLast4";
+    readonly tauxCommissionBase: "tauxCommissionBase";
+    readonly fraisJournalierDef: "fraisJournalierDef";
+    readonly actif: "actif";
+    readonly createdAt: "createdAt";
+    readonly updatedAt: "updatedAt";
+};
+export type VendeurScalarFieldEnum = (typeof VendeurScalarFieldEnum)[keyof typeof VendeurScalarFieldEnum];
+export declare const OperationScalarFieldEnum: {
+    readonly id: "id";
+    readonly slug: "slug";
+    readonly nomOperation: "nomOperation";
+    readonly magasin: "magasin";
+    readonly ville: "ville";
+    readonly loginId: "loginId";
+    readonly loginPassword: "loginPassword";
+    readonly dateDebut: "dateDebut";
+    readonly dateFin: "dateFin";
+    readonly coefOperation: "coefOperation";
+    readonly tva: "tva";
+    readonly vendeursEnPied: "vendeursEnPied";
+    readonly createdAt: "createdAt";
+    readonly updatedAt: "updatedAt";
+};
+export type OperationScalarFieldEnum = (typeof OperationScalarFieldEnum)[keyof typeof OperationScalarFieldEnum];
+export declare const AffectationVendeurScalarFieldEnum: {
+    readonly id: "id";
+    readonly operationId: "operationId";
+    readonly vendeurId: "vendeurId";
+    readonly role: "role";
+    readonly dateDebut: "dateDebut";
+    readonly dateFin: "dateFin";
+    readonly fraisJournalier: "fraisJournalier";
+    readonly commission: "commission";
+    readonly createdAt: "createdAt";
+    readonly updatedAt: "updatedAt";
+};
+export type AffectationVendeurScalarFieldEnum = (typeof AffectationVendeurScalarFieldEnum)[keyof typeof AffectationVendeurScalarFieldEnum];
+export declare const VenteScalarFieldEnum: {
+    readonly id: "id";
+    readonly operationId: "operationId";
+    readonly date: "date";
+    readonly numBL: "numBL";
+    readonly client: "client";
+    readonly prixVenteTTC: "prixVenteTTC";
+    readonly acompte: "acompte";
+    readonly prixAchatHT: "prixAchatHT";
+    readonly modele: "modele";
+    readonly vendeurId: "vendeurId";
+    readonly finisseurId: "finisseurId";
+    readonly paiement: "paiement";
+    readonly livraisonTTC: "livraisonTTC";
+    readonly creditAccepte: "creditAccepte";
+    readonly observations: "observations";
+    readonly createdAt: "createdAt";
+    readonly updatedAt: "updatedAt";
+};
+export type VenteScalarFieldEnum = (typeof VenteScalarFieldEnum)[keyof typeof VenteScalarFieldEnum];
+export declare const SortOrder: {
+    readonly asc: "asc";
+    readonly desc: "desc";
+};
+export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder];
+export declare const QueryMode: {
+    readonly default: "default";
+    readonly insensitive: "insensitive";
+};
+export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode];
+export declare const NullsOrder: {
+    readonly first: "first";
+    readonly last: "last";
+};
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder];

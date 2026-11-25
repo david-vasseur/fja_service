@@ -1,0 +1,11 @@
+import * as Prisma from './internal/prismaNamespaceBrowser.js';
+export { Prisma };
+export * as $Enums from './enums.js';
+export * from './enums.js';
+export type Admin = Prisma.AdminModel;
+export type SessionFingerprint = Prisma.SessionFingerprintModel;
+export type PushSubscription = Prisma.PushSubscriptionModel;
+export type Vendeur = Prisma.VendeurModel;
+export type Operation = Prisma.OperationModel;
+export type AffectationVendeur = Prisma.AffectationVendeurModel;
+export type Vente = Prisma.VenteModel;

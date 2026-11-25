@@ -1,0 +1,27 @@
+services:
+  fja-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fja-backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    expose:
+      - "4002"
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - fja_internal
+
+networks:
+  fja_internal:
+    name: fja_internal
+    driver: bridge
