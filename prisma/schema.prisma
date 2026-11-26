@@ -173,3 +173,4 @@ model Vente {
   @@index([operationId])
   @@index([date])
 }
+

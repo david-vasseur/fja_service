@@ -5,6 +5,7 @@ import {
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service.js';
 import { ModePaiement, RoleMission, StatutCredit, UserRole } from '../generated/prisma/browser.js';
+import { PushService } from '../push/push.service.js';
 
 export interface SessionContext {
   role: UserRole;
@@ -13,7 +14,10 @@ export interface SessionContext {
 
 @Injectable()
 export class OperationsService {
-  constructor(private readonly prisma: PrismaService) {}
+    constructor(
+        private readonly prisma: PrismaService,
+        private readonly pushService: PushService,
+    ) {}
 
   private assertAccess(session: SessionContext, slug: string) {
     if (session.role === UserRole.ADMIN) return;
@@ -249,6 +253,13 @@ export class OperationsService {
         creditAccepte: this.mapStatutCreditToDb(body.creditAccepte),
         observations: body.observations ?? 'Contremarque',
       },
+    });
+
+    const modeleInfo = created.modele ? ` (${created.modele})` : '';
+    void this.pushService.notifyAll({
+        title: `Nouvelle vente — ${op.magasin} (${op.ville})`,
+        body: `${created.client}${modeleInfo} • ${created.prixVenteTTC.toLocaleString('fr-FR')} € TTC`,
+        url: `/dashboard/operations/${op.slug}`,
     });
 
     return {
